@@ -5,11 +5,58 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
+     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-     <h1>0000 0000 0000 0000</h1>
-     <input  maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text">
+     <div class="main__container">
+          <div class="main__wrap">
+               <div class="card__wrap">
+                    <img src="" alt="Платёжная система">
+                    <h1 id="cardNumber">#### #### #### ####</h1>
+                    <div class="cardName__wrap">
+                         <h2>Имя на карте</h2>
+                         <h1 id="cardName">Имя Фамилия</h1>
+                    </div>
+                    <div class="cardData__wrap">
+                         <h2>Истекает</h2>
+                         <h1><span>Месяц</span>/<span>Год</span></h1>
+                    </div>
+                    <h1 id="cardDate"></h1>
+               </div>
+               <form class="content__wrap">
+                    <label>
+                         <h1>Номер карты</h1>
+                         
+                         <input maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text">
+                    </label>
+                    <label>
+                         <h1>Имя на карте</h1>
+                         <input maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text">
+                    </label>
+                    <div class="other__info__wrap">
+                         <div class="other__info__card">
+                              <select name="month" id="">
+                                   <option value="value1" disabled>Укажите месяц</option>
+                                   <option value="value1">Январь</option>
+                                   <option value="value1">Февраль</option>
+                                   <option value="value1">Март</option>
+                              </select>
+                              <select name="year" id="">
+                                   <option value="value1" disabled>Укажите год</option>
+                                   <option value="value1">2011</option>
+                                   <option value="value1">Январь</option>
+                              </select>
+                         </div>
+                         <h1>CW</h1>
+                         <input type="text" name="" id="">
+                    </div>
+                    <button type="submit">Отправить данные</button>
+               </form>
+          </div>
+     </div>
+     <!-- <h1>0000 0000 0000 0000</h1>
+     <input  maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text"> -->
 </body>
 </html>
 <script src="./app.js"></script>

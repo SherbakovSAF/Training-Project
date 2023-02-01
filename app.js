@@ -1,8 +1,7 @@
+// Создание заполнения карточки
 let state = {
      CardNumber: ""
 }
-
-
 
 function renderCardNumber(e){
      e.currentTarget.value = e.currentTarget.value.replace(/[^\d]/g,'')
@@ -10,7 +9,7 @@ function renderCardNumber(e){
      if(+e.key / 1 == +e.key || e.key == "Backspace"){
           state.CardNumber = e.currentTarget.value
           if(state.CardNumber.length <= 16){
-               document.querySelector("h1").innerHTML = sep([...state.CardNumber, "0".repeat(16 - state.CardNumber.length)].join(""), 4).join(" ")
+               document.getElementById("cardNumber").innerHTML = sep([...state.CardNumber, "0".repeat(16 - state.CardNumber.length)].join(""), 4).join(" ")
                // + 
           } else{
                console.log("Прекрати да")
@@ -18,8 +17,7 @@ function renderCardNumber(e){
      } 
 }
 
-//     console.log(document.getElementById("mainInput").innerHTML)
-
+// Обучение fetch и ассинхроннорсти
 
 // async function getObject() {
 //      let response = await fetch("http://www.mocky.io/v2/5944e07213000038025b6f30")
