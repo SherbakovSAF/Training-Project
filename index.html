@@ -6,6 +6,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
      <link rel="stylesheet" href="./style.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap">
 </head>
 
 <body>
@@ -26,31 +27,35 @@
                </div>
                <form class="content__wrap">
                     <label>
-                         <h1>Номер карты</h1>
-                         
-                         <input maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text">
+                         <h1 class="title-input">Номер карты</h1>
+                         <input class="entry-field" maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text">
                     </label>
                     <label>
-                         <h1>Имя на карте</h1>
-                         <input maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text">
+                         <h1 class="title-input">Имя на карте</h1>
+                         <input class="entry-field" maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text">
                     </label>
-                    <div class="other__info__wrap">
                          <div class="other__info__card">
-                              <select name="month" id="">
-                                   <option value="value1" disabled>Укажите месяц</option>
-                                   <option value="value1">Январь</option>
-                                   <option value="value1">Февраль</option>
-                                   <option value="value1">Март</option>
-                              </select>
-                              <select name="year" id="">
-                                   <option value="value1" disabled>Укажите год</option>
-                                   <option value="value1">2011</option>
-                                   <option value="value1">Январь</option>
-                              </select>
+                              <div class="other__info__date">
+                                   <h1 class="title-input">Срок действия</h1>
+                                   <div class="other__info__date__inputs">
+                                        <select class="entry-field" name="month" id="">
+                                             <option value="value1" disabled>Укажите месяц</option>
+                                             <option value="value1">Январь</option>
+                                             <option value="value1">Февраль</option>
+                                             <option value="value1">Март</option>
+                                        </select>
+                                        <select class="entry-field" name="year" id="">
+                                             <option value="value1" disabled>Укажите год</option>
+                                             <option value="value1">2011</option>
+                                             <option value="value1">Январь</option>
+                                        </select>
+                                   </div>
+                              </div>
+                              <div class="other__info__code">
+                                   <h1 class="title-input">CW</h1>
+                                   <input class="entry-field" type="text" name="" id="">
+                              </div>
                          </div>
-                         <h1>CW</h1>
-                         <input type="text" name="" id="">
-                    </div>
                     <button type="submit">Отправить данные</button>
                </form>
           </div>
