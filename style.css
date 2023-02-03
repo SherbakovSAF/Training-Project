@@ -46,6 +46,7 @@ body{
 
 .card__wrap img{
      margin-left: auto;
+     height: 15%;
 }
 
 .card__wrap h1{
