@@ -106,7 +106,9 @@ body{
 .cardName__wrap h2{
      
 }
-.cardData__wrap {
+.cardData__wrap h3{
+     text-align: end;
+
 }
 .content__wrap * {
      margin-top: 5px;

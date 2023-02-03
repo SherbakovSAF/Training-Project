@@ -76,6 +76,9 @@ let store = {
             document.getElementById("cardName").innerHTML = "Имя Фамилия";
         }
     },
+    renderCardMonth(el, tag) {
+        document.querySelector(tag).innerHTML = el.currentTarget.value
+    },
 };
 
 // 4 - visa

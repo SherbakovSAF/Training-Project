@@ -22,7 +22,7 @@
                          </div>
                          <div class="cardData__wrap">
                               <h3>Истекает</h3>
-                              <h2><span>Месяц</span>/<span>Год</span></h2>
+                              <h2><span class="cardMonth">Месяц</span>/<span class="cardYear">Год</span></h2>
                          </div>
                     </div>
                     
@@ -30,26 +30,35 @@
                <form class="content__wrap">
                     <label>
                          <h1 class="title-input">Номер карты</h1>
-                         <input class="entry-field" maxlength="16" pattern="[0-9]{3}" onkeyup="store.renderCardNumber(event)" id="mainInput" type="text">
+                         <input class="entry-field" maxlength="16"  onkeyup="store.renderCardNumber(event)" id="mainInput" type="text">
                     </label>
                     <label>
                          <h1 class="title-input">Имя на карте</h1>
-                         <input class="entry-field" maxlength="16" pattern="[0-9]{3}" onkeyup="store.renderCardName(event)" id="mainInput" type="text">
+                         <input class="entry-field" maxlength="16" onkeyup="store.renderCardName(event)" id="mainInput" type="text">
                     </label>
                          <div class="other__info__card">
                               <div class="other__info__date">
                                    <h1 class="title-input">Срок действия</h1>
                                    <div class="other__info__date__inputs">
-                                        <select class="entry-field" name="month" id="">
-                                             <option value="value1" disabled selected>Месяц</option>
-                                             <option value="value1">Январь</option>
-                                             <option value="value1">Февраль</option>
-                                             <option value="value1">Март</option>
+                                        <select class="entry-field" name="month" id="" onchange="store.renderCardMonth(event, '.cardData__wrap .cardMonth')">
+                                             <option value="00" disabled selected>Месяц</option>
+                                             <option value="01">Январь</option>
+                                             <option value="02">Февраль</option>
+                                             <option value="03">Март</option>
+                                             <option value="04">Апрель</option>
+                                             <option value="05">Май</option>
+                                             <option value="06">Июнь</option>
+                                             <option value="07">Июль</option>
+                                             <option value="08">Август</option>
+                                             <option value="09">Сентябрь</option>
+                                             <option value="10">Октябрь</option>
+                                             <option value="11">Ноябрь</option>
+                                             <option value="12">Декабрь</option>
                                         </select>
-                                        <select class="entry-field" name="year" id="">
-                                             <option value="value1" disabled selected>Год</option>
-                                             <option value="value1">2011</option>
-                                             <option value="value1">Январь</option>
+                                        <select class="entry-field" name="year" id="" onchange="store.renderCardMonth(event, '.cardData__wrap .cardYear')">
+                                             <option value="Год" disabled selected>Год</option>
+                                             <option value="2011">2011</option>
+                                             <option value="2012">2012</option>
                                         </select>
                                    </div>
                               </div>
