@@ -47,7 +47,11 @@ let store = {
           } 
           this.renderPaySystem()
      },
-     
+     renderCardName(e){
+          e.currentTarget.value = e.currentTarget.value.replace(/[^\W]/g,'')
+          this.state.cardName = e.currentTarget.value
+          document.getElementById("cardName").innerHTML = this.state.cardName
+     }
 }
 
 // 4 - visa
