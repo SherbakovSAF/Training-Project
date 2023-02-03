@@ -1,21 +1,28 @@
 // Создание заполнения карточки
-let state = {
-     CardNumber: ""
-}
-
-function renderCardNumber(e){
-     e.currentTarget.value = e.currentTarget.value.replace(/[^\d]/g,'')
-     const sep = (xs, s) => xs.length ? [xs.slice(0, s), ...sep(xs.slice(s), s)] : []
-     if(+e.key / 1 == +e.key || e.key == "Backspace"){
-          state.CardNumber = e.currentTarget.value
-          if(state.CardNumber.length <= 16){
-               document.getElementById("cardNumber").innerHTML = sep([...state.CardNumber, "0".repeat(16 - state.CardNumber.length)].join(""), 4).join(" ")
-               // + 
-          } else{
-               console.log("Прекрати да")
+let store = {
+     state: {
+          cardNumber: "",
+          colorBank: {
+               sberbank: "#045A38",
+               tinkoff: "#F8d81c",
+               alpha: "#EF3124",
+               vtb: "blue",
           }
-     } 
-}
+     },
+     renderCardNumber(e){
+          let cardNumber = store.state.cardNumber
+          e.currentTarget.value = e.currentTarget.value.replace(/[^\d]/g,'')
+          const sep = (xs, s) => xs.length ? [xs.slice(0, s), ...sep(xs.slice(s), s)] : []
+          if(+e.key / 1 == +e.key || e.key == "Backspace"){
+               cardNumber = e.currentTarget.value
+               if(cardNumber.length <= 16){
+                    document.getElementById("cardNumber").innerHTML = sep([...cardNumber, "#".repeat(16 - cardNumber.length)].join(""), 4).join(" ")
+                    // + 
+               } else{
+                    console.log("Прекрати да")
+               }
+          } 
+}}
 
 // Обучение fetch и ассинхроннорсти
 

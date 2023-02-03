@@ -2,7 +2,7 @@ body{
      font-family: 'Source Code Pro';
      margin: 0;
      padding: 0;
-     
+     overflow: hidden;
 }
 
 *{
@@ -17,20 +17,62 @@ body{
      display: flex;
      align-items: center;
      justify-content: center;
+     padding-top: 40px;
+     
 }
 .main__wrap {
      width: 600px;
      border-radius: 10px;
      box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
      padding: 3%;
-     padding-top: 0px;
 }
 .card__wrap {
-     background-color: rgb(228, 0, 0);
-     transform: translateY(-40%);
-     width: 90%;
-     
+     background-color: rgb(240, 240, 240);
+     border-radius: 20px;
+     border: 2px solid #9c9c9c;
+     width: 430px;
+     height: 230px;
      margin: auto;
+     margin-top: -130px;
+     color: white;
+     font-family: "Source Code Pro", monospace;
+     text-shadow: 7px 6px 10px rgb(14 42 90 / 80%);
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 25px 15px;
+}
+
+
+.card__wrap img{
+     margin-left: auto;
+}
+
+.card__wrap h1{
+     text-align: center;
+}
+
+.card__wrap h3{
+     opacity: 0.7;
+    font-size: 13px;
+}
+
+.card__wrap h2{
+     white-space: nowrap;
+    font-size: 18px;
+    text-transform: uppercase;
+
+}
+
+
+.card__Number{
+     font-size: 27px;
+     font-weight: 500;
+}
+
+.other__card__info{
+     display: flex;
+     justify-content: space-between;
 }
 
 .title-input{
@@ -60,7 +102,7 @@ body{
      font-family: "Source Sans Pro", sans-serif;
 }
 
-.cardName__wrap {
+.cardName__wrap h2{
      
 }
 .cardData__wrap {
@@ -93,6 +135,10 @@ body{
 
 .other__info__card .other__info__code{
      margin-left: 15%;
+}
+
+.content__wrap{
+     padding-top: 180px;
 }
 
 .content__wrap button{

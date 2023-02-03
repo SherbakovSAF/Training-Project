@@ -12,23 +12,25 @@
 <body>
      <div class="main__container">
           <div class="main__wrap">
-               <div class="card__wrap">
+               <div class="card__wrap tinkoff">
                     <img src="" alt="Платёжная система">
-                    <h1 id="cardNumber">#### #### #### ####</h1>
-                    <div class="cardName__wrap">
-                         <h2>Имя на карте</h2>
-                         <h1 id="cardName">Имя Фамилия</h1>
+                    <h1 class="card__Number" id="cardNumber">#### #### #### ####</h1>
+                    <div class="other__card__info">
+                         <div class="cardName__wrap">
+                              <h3>Имя на карте</h3>
+                              <h2 id="cardName">Имя Фамилия</h2>
+                         </div>
+                         <div class="cardData__wrap">
+                              <h3>Истекает</h3>
+                              <h2><span>Месяц</span>/<span>Год</span></h2>
+                         </div>
                     </div>
-                    <div class="cardData__wrap">
-                         <h2>Истекает</h2>
-                         <h1><span>Месяц</span>/<span>Год</span></h1>
-                    </div>
-                    <h1 id="cardDate"></h1>
+                    
                </div>
                <form class="content__wrap">
                     <label>
                          <h1 class="title-input">Номер карты</h1>
-                         <input class="entry-field" maxlength="16" pattern="[0-9]{3}" onkeyup="renderCardNumber(event)" id="mainInput" type="text">
+                         <input class="entry-field" maxlength="16" pattern="[0-9]{3}" onkeyup="store.renderCardNumber(event)" id="mainInput" type="text">
                     </label>
                     <label>
                          <h1 class="title-input">Имя на карте</h1>
@@ -39,13 +41,13 @@
                                    <h1 class="title-input">Срок действия</h1>
                                    <div class="other__info__date__inputs">
                                         <select class="entry-field" name="month" id="">
-                                             <option value="value1" disabled>Укажите месяц</option>
+                                             <option value="value1" disabled selected>Месяц</option>
                                              <option value="value1">Январь</option>
                                              <option value="value1">Февраль</option>
                                              <option value="value1">Март</option>
                                         </select>
                                         <select class="entry-field" name="year" id="">
-                                             <option value="value1" disabled>Укажите год</option>
+                                             <option value="value1" disabled selected>Год</option>
                                              <option value="value1">2011</option>
                                              <option value="value1">Январь</option>
                                         </select>
