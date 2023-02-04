@@ -3,6 +3,7 @@ let store = {
     state: {
         cardNumber: "",
         cardName: "",
+        cardCW: "",
         colorBank: {
             sberbank: "#045A38",
             tinkoff: "#F8d81c",
@@ -36,8 +37,7 @@ let store = {
     },
     changeColorCard(){
      let cardWrap = document.querySelector(".card__wrap");
-     
-     switch (this.state.cardNumber.match(/.{1,4}/g)[0].slice(1)) {
+     switch (this.state.cardNumber.match(/.{0,4}/g)[0].slice(1)) {
          case "276":
              cardWrap.style.backgroundColor = this.state.colorBank.sberbank;
              break;
@@ -76,9 +76,45 @@ let store = {
             document.getElementById("cardName").innerHTML = "Имя Фамилия";
         }
     },
+    renderCardCW(e) {
+        e.currentTarget.value = e.currentTarget.value.replace(/[^\d]/g, "");
+        if (+e.key / 1 == +e.key || e.key == "Backspace") {
+            this.state.cardCW = e.currentTarget.value;
+            if (this.state.cardCW.length <= 3) {
+                document.getElementById("cardCW").innerHTML = this.state.cardCW
+            }
+        }
+        this.renderPaySystem();
+        
+        this.changeColorCard()
+    },
     renderCardMonth(el, tag) {
         document.querySelector(tag).innerHTML = el.currentTarget.value
     },
+    focusCardSide(status){
+        const cardWrap = document.querySelector(".card__wrap")
+        if(status == "reverse"){
+            cardWrap.innerHTML = `
+                    <img src="https://i.postimg.cc/5tF3BhL8/eror.png" alt="Платёжная система">
+                    <h1 id="cardCW">${this.state.cardCW}</h1>
+            `
+        } else {
+            cardWrap.innerHTML = `
+                    <img src="https://i.postimg.cc/5tF3BhL8/eror.png" alt="Платёжная система">
+                    <h1 class="card__Number" id="cardNumber">${this.state.cardNumber}</h1>
+                    <div class="other__card__info">
+                         <div class="cardName__wrap">
+                              <h3>Имя на карте</h3>
+                              <h2 id="cardName">${this.state.cardName}</h2>
+                         </div>
+                         <div class="cardData__wrap">
+                              <h3>Истекает</h3>
+                              <h2><span class="cardMonth">Месяц</span>/<span class="cardYear">Год</span></h2>
+                         </div>
+                    </div>
+            `
+        }
+    }
 };
 
 // 4 - visa

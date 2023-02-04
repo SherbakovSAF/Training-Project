@@ -41,6 +41,7 @@ body{
      flex-direction: column;
      justify-content: space-between;
      padding: 25px 15px;
+     position: relative;
 }
 
 
@@ -157,5 +158,20 @@ body{
      color: #fff;
      margin-top: 20px;
      cursor: pointer;
+
+}
+
+#cardCW{
+     background-color: white;
+     text-align: end;
+     padding: 10px 25px;
+     font-size: 15px;
+     color: black;
+     position: absolute;
+     width: 100%;
+     top: 50%;
+     transform: translateY(-50%);
+     left: 0;
+     box-sizing: border-box;
 
 }

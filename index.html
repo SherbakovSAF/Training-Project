@@ -12,7 +12,7 @@
 <body>
      <div class="main__container">
           <div class="main__wrap">
-               <div class="card__wrap tinkoff">
+               <div class="card__wrap">
                     <img src="https://i.postimg.cc/5tF3BhL8/eror.png" alt="Платёжная система">
                     <h1 class="card__Number" id="cardNumber">#### #### #### ####</h1>
                     <div class="other__card__info">
@@ -25,22 +25,21 @@
                               <h2><span class="cardMonth">Месяц</span>/<span class="cardYear">Год</span></h2>
                          </div>
                     </div>
-                    
                </div>
                <form class="content__wrap">
                     <label>
                          <h1 class="title-input">Номер карты</h1>
-                         <input class="entry-field" maxlength="16"  onkeyup="store.renderCardNumber(event)" id="mainInput" type="text">
+                         <input onfocus="store.focusCardSide()" class="entry-field" maxlength="16"  onkeyup="store.renderCardNumber(event)" id="mainInput" type="text">
                     </label>
                     <label>
                          <h1 class="title-input">Имя на карте</h1>
-                         <input class="entry-field" maxlength="16" onkeyup="store.renderCardName(event)" id="mainInput" type="text">
+                         <input onfocus="store.focusCardSide()" class="entry-field" maxlength="16" onkeyup="store.renderCardName(event)" id="mainInput" type="text">
                     </label>
                          <div class="other__info__card">
                               <div class="other__info__date">
                                    <h1 class="title-input">Срок действия</h1>
                                    <div class="other__info__date__inputs">
-                                        <select class="entry-field" name="month" id="" onchange="store.renderCardMonth(event, '.cardData__wrap .cardMonth')">
+                                        <select onfocus="store.focusCardSide()" class="entry-field" name="month" id="" onchange="store.renderCardMonth(event, '.cardData__wrap .cardMonth')">
                                              <option value="00" disabled selected>Месяц</option>
                                              <option value="01">Январь</option>
                                              <option value="02">Февраль</option>
@@ -55,7 +54,7 @@
                                              <option value="11">Ноябрь</option>
                                              <option value="12">Декабрь</option>
                                         </select>
-                                        <select class="entry-field" name="year" id="" onchange="store.renderCardMonth(event, '.cardData__wrap .cardYear')">
+                                        <select onfocus="store.focusCardSide()" class="entry-field" name="year" id="" onchange="store.renderCardMonth(event, '.cardData__wrap .cardYear')">
                                              <option value="Год" disabled selected>Год</option>
                                              <option value="2011">2011</option>
                                              <option value="2012">2012</option>
@@ -64,7 +63,7 @@
                               </div>
                               <div class="other__info__code">
                                    <h1 class="title-input">CW</h1>
-                                   <input class="entry-field" type="text" name="" id="">
+                                   <input onfocus="store.focusCardSide('reverse')" maxlength="3" onkeyup="store.renderCardCW(event)" class="entry-field" type="text" name="" id="">
                               </div>
                          </div>
                     <button type="submit">Отправить данные</button>
