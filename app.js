@@ -54,15 +54,13 @@ let store = {
 
     renderCardNumber(e) {
         e.currentTarget.value = e.currentTarget.value.replace(/[^\d]/g, "");
-        const sep = (xs, s) =>
-            xs.length ? [xs.slice(0, s), ...sep(xs.slice(s), s)] : [];
         if (+e.key / 1 == +e.key || e.key == "Backspace") {
             this.state.cardNumber = e.currentTarget.value;
             if (this.state.cardNumber.length <= 16) {
-                document.getElementById("cardNumber").innerHTML = sep(
-                    [...this.state.cardNumber,"#".repeat(16 - this.state.cardNumber.length),].join(""),4).join(" ");
+                document.getElementById("cardNumber").innerHTML = this.sep()
             }
         }
+        
         this.renderPaySystem();
         
         this.changeColorCard()
@@ -84,15 +82,21 @@ let store = {
                 document.getElementById("cardCW").innerHTML = this.state.cardCW
             }
         }
-        this.renderPaySystem();
         
+        this.renderPaySystem();
         this.changeColorCard()
+    },
+    sep(){
+        const sep = (xs, s) => xs.length ? [xs.slice(0, s), ...sep(xs.slice(s), s)] : [];
+        const cardNumber = sep([...this.state.cardNumber,"#".repeat(16 - this.state.cardNumber.length),].join(""),4).join(" ");
+        return cardNumber
     },
     renderCardMonth(el, tag) {
         document.querySelector(tag).innerHTML = el.currentTarget.value
     },
     focusCardSide(status){
         const cardWrap = document.querySelector(".card__wrap")
+    
         if(status == "reverse"){
             cardWrap.innerHTML = `
                     <img src="https://i.postimg.cc/5tF3BhL8/eror.png" alt="Платёжная система">
@@ -101,7 +105,7 @@ let store = {
         } else {
             cardWrap.innerHTML = `
                     <img src="https://i.postimg.cc/5tF3BhL8/eror.png" alt="Платёжная система">
-                    <h1 class="card__Number" id="cardNumber">${this.state.cardNumber}</h1>
+                    <h1 class="card__Number" id="cardNumber">${this.sep()}</h1>
                     <div class="other__card__info">
                          <div class="cardName__wrap">
                               <h3>Имя на карте</h3>

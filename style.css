@@ -73,8 +73,8 @@ body{
 }
 
 .other__card__info{
-     display: flex;
-     justify-content: space-between;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
 }
 
 .title-input{
@@ -104,10 +104,19 @@ body{
      font-family: "Source Sans Pro", sans-serif;
 }
 
+.cardName__wrap{
+     max-width: 80%;
+
+}
+
 .cardName__wrap h2{
-     
+
 }
 .cardData__wrap h3{
+     text-align: end;
+
+}
+.cardData__wrap h2{
      text-align: end;
 
 }
@@ -173,5 +182,5 @@ body{
      transform: translateY(-50%);
      left: 0;
      box-sizing: border-box;
-
+     height: 40px;
 }
