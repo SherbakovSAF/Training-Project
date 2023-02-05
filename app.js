@@ -23,16 +23,13 @@ let store = {
         let cardWrap = document.querySelector(".card__wrap img");
         switch (this.state.cardNumber[0]) {
             case "2":
-                cardWrap.setAttribute("src", this.state.paySystem.mir);
-                break;
+                return cardWrap.setAttribute("src", this.state.paySystem.mir);
             case "5":
-                cardWrap.setAttribute("src", this.state.paySystem.masterCard);
-                break;
+                return cardWrap.setAttribute("src", this.state.paySystem.masterCard);
             case "4":
-                cardWrap.setAttribute("src", this.state.paySystem.visa);
-                break;
+                return cardWrap.setAttribute("src", this.state.paySystem.visa);
             default:
-                cardWrap.setAttribute("src", this.state.paySystem.eror);
+                return cardWrap.setAttribute("src", this.state.paySystem.eror);
         }
     },
     changeColorCard(){
@@ -95,15 +92,16 @@ let store = {
     },
     focusCardSide(status){
         const cardWrap = document.querySelector(".card__wrap")
-    
+        console.log(this.renderPaySystem()+"")
         if(status == "reverse"){
             cardWrap.innerHTML = `
-                    <img src="https://i.postimg.cc/5tF3BhL8/eror.png" alt="Платёжная система">
+                    <img src=${this.renderPaySystem()} alt="Платёжная система">
                     <h1 id="cardCW">${this.state.cardCW}</h1>
             `
+            this.renderPaySystem()
         } else {
             cardWrap.innerHTML = `
-                    <img src="https://i.postimg.cc/5tF3BhL8/eror.png" alt="Платёжная система">
+                    <img src="" alt="Платёжная система">
                     <h1 class="card__Number" id="cardNumber">${this.sep()}</h1>
                     <div class="other__card__info">
                          <div class="cardName__wrap">
@@ -116,6 +114,7 @@ let store = {
                          </div>
                     </div>
             `
+            this.renderPaySystem()
         }
     }
 };
