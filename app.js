@@ -62,7 +62,6 @@ let store = {
         }
         
         this.renderPaySystem();
-        
         this.changeColorCard()
     },
     renderCardName(e) {
@@ -109,7 +108,7 @@ let store = {
                     <div class="other__card__info">
                          <div class="cardName__wrap">
                               <h3>Имя на карте</h3>
-                              <h2 id="cardName">${this.state.cardName}</h2>
+                              <h2 id="cardName">${this.state.cardName ? this.state.cardName : "Имя Фамилия"}</h2>
                          </div>
                          <div class="cardData__wrap">
                               <h3>Истекает</h3>
