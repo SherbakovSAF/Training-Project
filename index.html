@@ -42,7 +42,7 @@
                               <h1 class="title-input">Срок действия</h1>
                               <div class="other__info__date__inputs">
                                    <select onfocus="store.focusCardSide()" class="entry-field" name="month" id=""
-                                        onchange="store.renderCardMonth(event, '.cardData__wrap .cardMonth')">
+                                        onchange="store.renderCardDate(event, '.cardData__wrap .cardMonth')">
                                         <option value="00" disabled selected>Месяц</option>
                                         <option value="01">Январь</option>
                                         <option value="02">Февраль</option>
@@ -58,7 +58,7 @@
                                         <option value="12">Декабрь</option>
                                    </select>
                                    <select onfocus="store.focusCardSide()" class="entry-field" name="year" id=""
-                                        onchange="store.renderCardMonth(event, '.cardData__wrap .cardYear')">
+                                        onchange="store.renderCardDate(event, '.cardData__wrap .cardYear')">
                                         <option value="Год" disabled selected>Год</option>
                                         <option value="2011">2011</option>
                                         <option value="2012">2012</option>

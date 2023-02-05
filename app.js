@@ -4,6 +4,8 @@ let store = {
         cardNumber: "",
         cardName: "",
         cardCW: "",
+        cardMonth: "",
+        cardYear: "",
         colorBank: {
             sberbank: "#045A38",
             tinkoff: "#F8d81c",
@@ -87,8 +89,9 @@ let store = {
         const cardNumber = sep([...this.state.cardNumber,"#".repeat(16 - this.state.cardNumber.length),].join(""),4).join(" ");
         return cardNumber
     },
-    renderCardMonth(el, tag) {
+    renderCardDate(el, tag) {
         document.querySelector(tag).innerHTML = el.currentTarget.value
+        this.state[tag.split(" ")[tag.split(" ").length-1].slice(1)] = el.currentTarget.value
     },
     focusCardSide(status){
         const cardWrap = document.querySelector(".card__wrap")
@@ -110,7 +113,7 @@ let store = {
                          </div>
                          <div class="cardData__wrap">
                               <h3>Истекает</h3>
-                              <h2><span class="cardMonth">Месяц</span>/<span class="cardYear">Год</span></h2>
+                              <h2><span class="cardMonth">${this.state.cardMonth ? this.state.cardMonth : "Месяц"}</span>/<span class="cardYear">${this.state.cardYear ? this.state.cardYear : "Год"}</span></h2>
                          </div>
                     </div>
             `
